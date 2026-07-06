@@ -1,0 +1,6 @@
+{
+    "appId": "com.yourname.dailyearntracker",
+    "appName": "Daily Earn Tracker",
+    "webDir": "dist",
+    "bundledWebRuntime": false
+}
