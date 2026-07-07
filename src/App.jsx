@@ -448,13 +448,29 @@ export default function App() {
                                 </button>
                             ))}
                         </div>
-                        <div style={{ display: "flex", gap: 8 }}>
-                            <input placeholder="What did you spend on?" value={qExpDesc} onChange={e => setQExpDesc(e.target.value)}
-                                style={{ flex: 2, background: T.bg4, border: `1px solid ${T.border2}`, borderRadius: 10, padding: "10px 13px", color: T.text, fontSize: 13, outline: "none" }} />
-                            <input type="number" placeholder="₹" value={qExpAmt} onChange={e => setQExpAmt(e.target.value)} onKeyDown={e => e.key === "Enter" && logQuickExp()}
-                                style={{ flex: 1, background: T.bg4, border: `1px solid ${T.border2}`, borderRadius: 10, padding: "10px 10px", color: T.text, fontSize: 14, fontWeight: 700, outline: "none" }} />
-                            <button onClick={logQuickExp} style={{ background: "linear-gradient(135deg,#ea580c,#c2410c)", color: "#fff", border: "none", borderRadius: 10, padding: "0 14px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}>+</button>
+                        <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+                            <input
+                                type="number"
+                                placeholder="₹ Amount Spend"
+                                value={qExpAmt}
+                                onChange={e => setQExpAmt(e.target.value)}
+                                onKeyDown={e => e.key === "Enter" && logQuickExp()}
+                                style={{ flex: 1, background: T.bg4, border: `1px solid ${T.border2}`, borderRadius: 10, padding: "11px 13px", color: T.text, fontSize: 15, fontWeight: 700, outline: "none" }}
+                            />
+                            <button
+                                onClick={logQuickExp}
+                                style={{ background: "linear-gradient(135deg,#ea580c,#c2410c)", color: "#fff", border: "none", borderRadius: 10, padding: "0 18px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}
+                            >
+                                + Log
+                            </button>
                         </div>
+
+                        <input
+                            placeholder="What did you spend on?"
+                            value={qExpDesc}
+                            onChange={e => setQExpDesc(e.target.value)}
+                            style={{ width: "100%", background: T.bg4, border: `1px solid ${T.border2}`, borderRadius: 10, padding: "9px 13px", color: T.text, fontSize: 13, outline: "none", boxSizing: "border-box" }}
+                        />
                         {/* today's last 3 expenses */}
                         {todayExps.length > 0 && (
                             <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 6 }}>
